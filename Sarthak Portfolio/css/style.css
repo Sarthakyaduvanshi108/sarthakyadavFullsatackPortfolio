@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  background: #111827;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO BOX */
+.logo-box {
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #879423;
+}
+
+.logo span {
+  color: #ec0a0a;
+}
+
+/* NAV */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .nav-list {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(10, 5, 5, 0.15);
+  }
+
+  .nav-list.active {
+    display: flex;
+     
+  }
+
+  .hamburger {
+    display: block;
+   
+  }
+}
+
+
+/* HERO */
+.hero {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-photo img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #ffffff;
+}
+
+
+/* HERO PHOTO WHITE CARD */
+.hero-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin: 8px 0 6px;   /* 👈 name & icons ke beech gap */
+}
+
+.hero-photo-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* PHOTO CONTAINER – FIXED HEIGHT */
+.hero-photo {
+  width: 100%;
+  height: 160px;          /* 👈 yahi crop control karta hai */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: #f3f4f6;
+}
+
+/* IMAGE – FORCE CROP FROM BOTTOM */
+.hero-photo img {
+  width: 100%;
+  height: 95%;           /* 👈 image thodi badi */
+  object-fit: cover;
+  object-position: top center; /* 👈 sir + chest focus */
+}
+
+/* ICONS BELOW PHOTO */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-social a {
+  font-size: 24px;
+  color: #2563eb;
+  transition: 0.3s ease;
+}
+
+.hero-social a:hover {
+  color: #111827;
+  transform: scale(1.15);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-photo-card {
+    margin: auto;
+  }
+}
+
+
+/* SECTIONS */
+.section {
+  padding: 60px 0;
+}
+.light {
+  background: #eef2f7;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 15px;
+}
+
+.skill {
+  background: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* CONTACT */
+/* CONTACT FULL WIDTH */
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info.full-width {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contact-desc {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contact-form button:hover {
+  background: #1e40af;
+}
+
+/* SOCIAL ICONS BOTTOM */
+.bottom-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.bottom-icons a {
+  font-size: 26px;
+  color: #2563eb;
+  transition: 0.3s;
+}
+
+.bottom-icons a:hover {
+  color: #111827;
+  transform: scale(1.2);
+}
+
+
+/* FOOTER */
+footer {
+  background: #111827;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: #111827;
+    width: 200px;
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .hamburg
